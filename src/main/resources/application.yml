@@ -1,0 +1,13 @@
+spring:
+    application:
+        name: lk-core
+    profiles:
+        active: dev
+    flyway:
+        schemas: qvansoft
+        locations: classpath:db/migration
+        enabled: true
+server:
+    servlet:
+        context-path: /api
+    port: 8025

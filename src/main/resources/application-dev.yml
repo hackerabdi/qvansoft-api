@@ -1,0 +1,27 @@
+spring:
+    config:
+        activate:
+            on-profile: dev
+    datasource:
+        url: jdbc:postgresql://localhost:5432/qvansoft
+        username: postgres
+        password: postgres
+        hikari:
+            schema: qvansoft
+    jpa:
+        properties:
+            hibernate:
+                jdbc:
+                    lob:
+                        #This entry is put just to avoid a warning message in the logs when you start the spring-boot application
+                        non_contextual_creation: true
+        hibernate:
+            ddl-auto: none
+        show-sql: false
+    sql:
+        init:
+            mode: never
+            platform: postgresql
+
+server:
+    port: 8025
